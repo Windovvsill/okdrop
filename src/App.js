@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './semantic/dist/semantic.min.css';
 import PropTypes from 'prop-types';
+import cherry from "./assets/cherry.jpg"
 import {
   Button,
   Container,
@@ -219,6 +220,8 @@ const App = () => (
           <Grid.Column width={8}>
             <Header as='h3' style={{ fontSize: '2em' }}>
               We Help Companies and Companions
+              <Image src={cherry} />
+
             </Header>
             <p style={{ fontSize: '1.33em' }}>
               We can give your company superpowers to do things that they never thought possible.
