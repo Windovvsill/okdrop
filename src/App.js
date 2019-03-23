@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './semantic/dist/semantic.min.css';
 import PropTypes from 'prop-types';
 import cherry from "./assets/cherry.jpg"
+import okdrop from "./assets/okdrop.svg"
 import {
   Button,
   Container,
@@ -36,16 +37,7 @@ const getWidth = () => {
  */
 const HomepageHeading = ({ mobile }) => (
   <Container text>
-    <Header
-      as='h1'
-      content='Okanagan Drop'
-      style={{
-        fontSize: mobile ? '2em' : '4em',
-        fontWeight: 'normal',
-        marginBottom: 0,
-        marginTop: mobile ? '1.5em' : '3em',
-      }}
-    />
+    <Image centered src={okdrop}></Image>
     <Header
       as='h2'
       content='Seamlessly providing fresh, organic, local Okanagan produce to the Lower Mainland directly from farmers, through partnerships with like-minded small businesses'
