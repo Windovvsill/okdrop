@@ -35,8 +35,7 @@ const HomepageHeading = ({ mobile }) => (
   <Container text>
     <Header
       as='h1'
-      content='Imagine-a-Company'
-      inverted
+      content='Okanagan Drop'
       style={{
         fontSize: mobile ? '2em' : '4em',
         fontWeight: 'normal',
@@ -46,8 +45,7 @@ const HomepageHeading = ({ mobile }) => (
     />
     <Header
       as='h2'
-      content='Do whatever you want when you want to.'
-      inverted
+      content='Seamlessly providing fresh, organic, local Okanagan produce to the Lower Mainland directly from farmers, through partnerships with like-minded small businesses'
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
         fontWeight: 'normal',
@@ -87,35 +85,10 @@ class DesktopContainer extends Component {
           onBottomPassedReverse={this.hideFixedMenu}
         >
           <Segment
-            inverted
             textAlign='center'
             style={{ minHeight: 700, padding: '1em 0em' }}
             vertical
           >
-            <Menu
-              fixed={fixed ? 'top' : null}
-              inverted={!fixed}
-              pointing={!fixed}
-              secondary={!fixed}
-              size='large'
-            >
-              <Container>
-                <Menu.Item as='a' active>
-                  Home
-                </Menu.Item>
-                <Menu.Item as='a'>Work</Menu.Item>
-                <Menu.Item as='a'>Company</Menu.Item>
-                <Menu.Item as='a'>Careers</Menu.Item>
-                <Menu.Item position='right'>
-                  <Button as='a' inverted={!fixed}>
-                    Log in
-                  </Button>
-                  <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
-                    Sign Up
-                  </Button>
-                </Menu.Item>
-              </Container>
-            </Menu>
             <HomepageHeading />
           </Segment>
         </Visibility>
@@ -212,61 +185,79 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node,
 }
 
+const PurposeSegment = () => (
+  <Segment style={{ padding: '8em 0em' }} vertical>
+    <Grid container stackable verticalAlign='middle'>
+      <Grid.Row>
+        <Grid.Column width={8}>
+          <Header as='h3' style={{ fontSize: '2em' }}>
+            1.
+            </Header>
+          <p style={{ fontSize: '1.33em' }}>
+            We can give your company superpowers to do things that they never thought possible.
+            Let us delight your customers and empower your needs... through pure data analytics.
+            </p>
+          <Header as='h3' style={{ fontSize: '2em' }}>
+            3.
+            </Header>
+          <p style={{ fontSize: '1.33em' }}>
+            Yes that's right, you thought it was the stuff of dreams, but even bananas can be
+            bioengineered.
+            </p>
+        </Grid.Column>
+        <Grid.Column width={8}>
+          <Header as='h3' style={{ fontSize: '2em' }}>
+            3.
+            </Header>
+          <p style={{ fontSize: '1.33em' }}>
+            We can give your company superpowers to do things that they never thought possible.
+            Let us delight your customers and empower your needs... through pure data analytics.
+            </p>
+          <Header as='h3' style={{ fontSize: '2em' }}>
+            4.
+            </Header>
+          <p style={{ fontSize: '1.33em' }}>
+            Yes that's right, you thought it was the stuff of dreams, but even bananas can be
+            bioengineered.
+            </p>
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
+  </Segment>
+);
+
+const FarmersSegment = () => (
+  <Segment style={{ padding: '0em' }} vertical>
+    <Grid celled='internally' columns='equal' stackable>
+      <Grid.Row textAlign='center'>
+        <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+          <Header as='h3' style={{ fontSize: '2em' }}>
+            "What a Company"
+            </Header>
+          <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
+        </Grid.Column>
+        <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+          <Header as='h3' style={{ fontSize: '2em' }}>
+            "I shouldn't have gone with their competitor."
+            </Header>
+          <p style={{ fontSize: '1.33em' }}>
+            <b>Nan</b> Chief Fun Officer Acme Toys
+            </p>
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
+  </Segment>
+);
+
 const App = () => (
   <ResponsiveContainer>
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
-        <Grid.Row>
-          <Grid.Column width={8}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              We Help Companies and Companions
-              <Image src={cherry} />
+        <PurposeSegment />
+      </Grid>
+    </Segment>
+    <FarmersSegment />
 
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              We can give your company superpowers to do things that they never thought possible.
-              Let us delight your customers and empower your needs... through pure data analytics.
-            </p>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              We Make Bananas That Can Dance
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              Yes that's right, you thought it was the stuff of dreams, but even bananas can be
-              bioengineered.
-            </p>
-          </Grid.Column>
-          <Grid.Column floated='right' width={6}>
-            <Image bordered rounded size='large' src='/images/wireframe/white-image.png' />
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column textAlign='center'>
-            <Button size='huge'>Check Them Out</Button>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Segment>
-    <Segment style={{ padding: '0em' }} vertical>
-      <Grid celled='internally' columns='equal' stackable>
-        <Grid.Row textAlign='center'>
-          <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              "What a Company"
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
-          </Grid.Column>
-          <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              "I shouldn't have gone with their competitor."
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              <Image avatar src='/images/avatar/large/nan.jpg' />
-              <b>Nan</b> Chief Fun Officer Acme Toys
-            </p>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Segment>
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Container text>
         <Header as='h3' style={{ fontSize: '2em' }}>
