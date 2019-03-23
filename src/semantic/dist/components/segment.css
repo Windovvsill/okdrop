@@ -654,10 +654,10 @@
 
 /* Purple */
 .ui.purple.segment:not(.inverted) {
-  border-top: 2px solid #A333C8 !important;
+  border-top: 2px solid #763760 !important;
 }
 .ui.inverted.purple.segment {
-  background-color: #A333C8 !important;
+  background-color: #763760 !important;
   color: #FFFFFF !important;
 }
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './semantic/dist/semantic.min.css';
-
 import PropTypes from 'prop-types';
 import {
   Button,
@@ -22,9 +21,9 @@ import {
 // We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
 // For more advanced usage please check Responsive docs under the "Usage" section.
 const getWidth = () => {
-  const isSSR = typeof window === 'undefined'
+  const isSSR = typeof window === 'undefined';
 
-  return isSSR ? Responsive.onlyTablet.minWidth : window.innerWidth
+  return isSSR ? Responsive.onlyTablet.minWidth : window.innerWidth;
 }
 
 /* eslint-disable react/no-multi-comp */
