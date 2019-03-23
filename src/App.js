@@ -18,6 +18,9 @@ import {
   Visibility,
 } from 'semantic-ui-react';
 
+const purple = "#763760";
+const green = "#89BF6B";
+
 // Heads up!
 // We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
 // For more advanced usage please check Responsive docs under the "Usage" section.
@@ -86,13 +89,12 @@ class DesktopContainer extends Component {
         >
           <Segment
             textAlign='center'
-            style={{ minHeight: 700, padding: '1em 0em' }}
+            style={{ minHeight: 700, padding: '1em 0em', backgroundColor: "#f5f5ff" }}
             vertical
           >
             <HomepageHeading />
           </Segment>
         </Visibility>
-
         {children}
       </Responsive>
     )
@@ -186,36 +188,37 @@ ResponsiveContainer.propTypes = {
 }
 
 const PurposeSegment = () => (
-  <Segment style={{ padding: '8em 0em' }} vertical>
+  <Segment style={{ padding: '0em' }} vertical>
+    <Container textAlign="center" text >
+      <Header as='h3' style={{ padding: "2em", fontSize: '2.5em', color: green, letterSpacing: "0.05em", fontWeight: "800" }}>
+        {"what we do"}
+      </Header>
+    </Container>
     <Grid container stackable verticalAlign='middle'>
       <Grid.Row>
         <Grid.Column width={8}>
           <Header as='h3' style={{ fontSize: '2em' }}>
-            1.
-            </Header>
+            {"fresh organic produce"}
+          </Header>
           <p style={{ fontSize: '1.33em' }}>
-            We can give your company superpowers to do things that they never thought possible.
-            Let us delight your customers and empower your needs... through pure data analytics.
-            </p>
+            {"We selects the best organic farms in the Okanagan to..."}
+          </p>
+        </Grid.Column>
+        <Grid.Column width={8}>
           <Header as='h3' style={{ fontSize: '2em' }}>
-            3.
-            </Header>
+            {"delivered to your backdoor"}
+          </Header>
           <p style={{ fontSize: '1.33em' }}>
             Yes that's right, you thought it was the stuff of dreams, but even bananas can be
             bioengineered.
             </p>
         </Grid.Column>
-        <Grid.Column width={8}>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Column width={16}>
           <Header as='h3' style={{ fontSize: '2em' }}>
-            3.
-            </Header>
-          <p style={{ fontSize: '1.33em' }}>
-            We can give your company superpowers to do things that they never thought possible.
-            Let us delight your customers and empower your needs... through pure data analytics.
-            </p>
-          <Header as='h3' style={{ fontSize: '2em' }}>
-            4.
-            </Header>
+            {"pick it up from one of our partners"}
+          </Header>
           <p style={{ fontSize: '1.33em' }}>
             Yes that's right, you thought it was the stuff of dreams, but even bananas can be
             bioengineered.
@@ -228,21 +231,26 @@ const PurposeSegment = () => (
 
 const FarmersSegment = () => (
   <Segment style={{ padding: '0em' }} vertical>
+    <Container textAlign="center" text >
+      <Header as='h3' style={{ fontSize: '2em' }}>
+        {"Our Farmers"}
+      </Header>
+    </Container>
     <Grid celled='internally' columns='equal' stackable>
-      <Grid.Row textAlign='center'>
+      <Grid.Row textAlign='left'>
         <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
           <Header as='h3' style={{ fontSize: '2em' }}>
-            "What a Company"
-            </Header>
+            {"Farmer 1"}
+          </Header>
           <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
         </Grid.Column>
+      </Grid.Row>
+      <Grid.Row textAlign='left'>
         <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
           <Header as='h3' style={{ fontSize: '2em' }}>
-            "I shouldn't have gone with their competitor."
-            </Header>
-          <p style={{ fontSize: '1.33em' }}>
-            <b>Nan</b> Chief Fun Officer Acme Toys
-            </p>
+            {"Farmer 2"}
+          </Header>
+          <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
         </Grid.Column>
       </Grid.Row>
     </Grid>
@@ -250,12 +258,8 @@ const FarmersSegment = () => (
 );
 
 const App = () => (
-  <ResponsiveContainer>
-    <Segment style={{ padding: '8em 0em' }} vertical>
-      <Grid container stackable verticalAlign='middle'>
-        <PurposeSegment />
-      </Grid>
-    </Segment>
+  <ResponsiveContainer >
+    <PurposeSegment />
     <FarmersSegment />
 
     <Segment style={{ padding: '8em 0em' }} vertical>
