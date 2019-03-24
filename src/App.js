@@ -61,9 +61,31 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? '0.5em' : '1.5em',
       }}
     >
-    <Icon name="heart" color="red" size="large" />
-    {"An Okanagan orchard in your backyard"}
+      <Icon name="heart" color="red" size="large" />
+      {"An Okanagan orchard in your backyard"}
     </Header>
+
+    {/* The subscribe box */}
+    <Segment margin raised>
+
+      <Header as='h3' style={{ fontSize: '2em' }}>
+        {"Sign up to stay updated on our progress"}
+      </Header>
+      <Grid>
+        <Grid.Row>
+          <Grid.Column width={12} stretched fluid>
+            <Input fluid label="email" placeholder="cherry@lover.ca" />
+          </Grid.Column>
+          <Grid.Column width={4} fluid>
+            <Button primary as='a' size='large' fluid>
+              {"Subscribe"}
+            </Button>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </Segment>
+
+
   </Container >
 )
 
@@ -280,7 +302,7 @@ const FarmersSegment = () => (
   >
     <Container textAlign="center" text >
       <Header as='h3' style={{ fontSize: '2em', padding: "2em" }}>
-        {"Our Farmers"}
+        {"Meet Farmer Jordan"}
       </Header>
     </Container>
     <Grid celled='internally' columns='equal' stackable>
@@ -325,12 +347,12 @@ const App = () => (
           {"Want to stay updated?"}
         </Header>
         <p style={{ fontSize: '1.33em' }}>
-          {"Subscribe to get stuff stuff stuff"}
+          {"We're just getting started!"}
         </p>
         <Grid>
           <Grid.Row>
             <Grid.Column width={12}>
-              <Input fluid label="email" placeholder="cherry@lover.ca"/>
+              <Input fluid label="email" placeholder="cherry@lover.ca" />
             </Grid.Column>
             <Grid.Column width={4}>
               <Button primary as='a' size='large'>
