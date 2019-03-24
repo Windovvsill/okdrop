@@ -19,6 +19,7 @@ import {
   Segment,
   Sidebar,
   Visibility,
+  Input,
 } from 'semantic-ui-react';
 
 const purple = "#763760";
@@ -52,18 +53,17 @@ const HomepageHeading = ({ mobile }) => (
     </div >
     <Image centered size="massive" src={okdrop} />
     <Header
+      textAlign="center"
       as='h2'
-      content='Seamlessly providing fresh, organic, local Okanagan produce to the Lower Mainland directly from farmers, through partnerships with like-minded small businesses'
       style={{
         fontSize: mobile ? '1em' : '1.5em',
         fontWeight: 'normal',
         marginTop: mobile ? '0.5em' : '1.5em',
       }}
-    />
-    <Button secondary size='huge'>
-      {"Get Started"}
-      <Icon name='down arrow' />
-    </Button>
+    >
+    <Icon name="heart" color="red" size="large" />
+    {"An Okanagan orchard in your backyard"}
+    </Header>
   </Container >
 )
 
@@ -203,8 +203,8 @@ const PurposeSegment = () => (
     paddingBottom: '4em',
     backgroundColor: "rgba(55,33,55, 1)",
     // backgroundImage: "radial-gradient(at 50% 100%, rgba(85, 21, 30, 1), rgba(85, 21, 30, 1), rgb(80, 20, 55, 1))",
-    backgroundImage: "radial-gradient(at 50% 100%, rgba(0, 0, 0, 1), rgba(40, 30, 40, 1), rgba(40, 30, 40, 1))",
-    // backgroundImage: "radial-gradient(at 50% 0%, rgba(40, 30, 40, 1), rgba(0, 0, 0, 1))",
+    backgroundImage: "radial-gradient(at 50% 100%, rgba(40, 30, 40, 1), rgba(40, 30, 40, 1))",
+    // backgroundImage: "radial-gradient(at 50% 0%, rgba(40, 30, 40, 1), rgba(40, 30, 40, 1))",
     boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
   }}
     vertical
@@ -218,7 +218,7 @@ const PurposeSegment = () => (
         transform: "translateX(-50%)",
         top: "-90px",
         // backgroundImage: "radial-gradient(at 50% 100%, rgba(85, 21, 30, 1), rgba(85, 21, 30, 1))",
-        backgroundImage: "radial-gradient(at 50% 0%, rgba(40, 30, 40, 1), rgba(0, 0, 0, 1))",
+        backgroundImage: "radial-gradient(at 50% 0%, rgba(40, 30, 40, 1), rgba(40, 30, 40, 1))",
         borderRadius: "25px",
       }}
         inverted
@@ -322,34 +322,39 @@ const App = () => (
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Container text>
         <Header as='h3' style={{ fontSize: '2em' }}>
-          Breaking The Grid, Grabs Your Attention
+          {"Want to stay updated?"}
         </Header>
         <p style={{ fontSize: '1.33em' }}>
-          Instead of focusing on content creation and hard work, we have learned how to master the
-          art of doing nothing by providing massive amounts of whitespace and generic content that
-          can seem massive, monolithic and worth your attention.
+          {"Subscribe to get stuff stuff stuff"}
         </p>
-        <Button as='a' size='large'>
-          Read More
-        </Button>
+        <Grid>
+          <Grid.Row>
+            <Grid.Column width={12}>
+              <Input fluid label="email" placeholder="cherry@lover.ca"/>
+            </Grid.Column>
+            <Grid.Column width={4}>
+              <Button primary as='a' size='large'>
+                {"Subscribe"}
+              </Button>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
         <Divider
           as='h4'
           className='header'
           horizontal
           style={{ margin: '3em 0em', textTransform: 'uppercase' }}
         >
-          <a href='#'>Case Studies</a>
+          {"Or"}
         </Divider>
         <Header as='h3' style={{ fontSize: '2em' }}>
-          Did We Tell You About Our Bananas?
+          Ready to order?
         </Header>
         <p style={{ fontSize: '1.33em' }}>
-          Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-          it's really true. It took years of gene splicing and combinatory DNA research, but our
-          bananas can really dance.
+          {"You really know your stuff!"}
         </p>
-        <Button as='a' size='large'>
-          I'm Still Quite Interested
+        <Button as='a' size='large' primary>
+          {"Pre-Order"}
         </Button>
       </Container>
     </Segment>
@@ -364,27 +369,24 @@ const App = () => (
             <Grid.Column width={3}>
               <Header inverted as='h4' content='About' />
               <List link inverted>
-                <List.Item as='a'>Sitemap</List.Item>
+                <List.Item as='a'>Team</List.Item>
                 <List.Item as='a'>Contact Us</List.Item>
-                <List.Item as='a'>Religious Ceremonies</List.Item>
-                <List.Item as='a'>Gazebo Plans</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={3}>
               <Header inverted as='h4' content='Services' />
               <List link inverted>
-                <List.Item as='a'>Banana Pre-Order</List.Item>
-                <List.Item as='a'>DNA FAQ</List.Item>
-                <List.Item as='a'>How To Access</List.Item>
-                <List.Item as='a'>Favorite X-Men</List.Item>
+                <List.Item as='a'>Season Pre-Order</List.Item>
+                <List.Item as='a'>FAQ</List.Item>
+                <List.Item as='a'>How Does It Work</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={7}>
               <Header as='h4' inverted>
-                Footer Header
+                Get in touch
               </Header>
               <p>
-                Extra space for a call to action inside the footer that could help re-engage users.
+                {"We might be out in the farm now, but we'll get back to you!"}
               </p>
             </Grid.Column>
           </Grid.Row>
