@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './semantic/dist/semantic.min.css';
+import './semantic/dist/semantic.css';
 import PropTypes from 'prop-types';
 import cherry from "./assets/cherry.jpg"
 import okdrop from "./assets/okdrop.svg"
@@ -36,8 +36,8 @@ const getWidth = () => {
  * such things.
  */
 const HomepageHeading = ({ mobile }) => (
-  <Container text>
-    <Image centered src={okdrop}></Image>
+  <Container >
+    <Image centered src={okdrop} style={{ maxWidth: "512px" }} />
     <Header
       as='h2'
       content='Seamlessly providing fresh, organic, local Okanagan produce to the Lower Mainland directly from farmers, through partnerships with like-minded small businesses'
@@ -45,6 +45,7 @@ const HomepageHeading = ({ mobile }) => (
         fontSize: mobile ? '1.5em' : '1.7em',
         fontWeight: 'normal',
         marginTop: mobile ? '0.5em' : '1.5em',
+        fontFamily: "Montserrat, sans-serif"
       }}
     />
     <Button primary size='huge'>
@@ -81,7 +82,7 @@ class DesktopContainer extends Component {
         >
           <Segment
             textAlign='center'
-            style={{ minHeight: 700, padding: '1em 0em', backgroundColor: "#f5f5ff" }}
+            style={{ minHeight: 400, padding: '4em 0em', backgroundColor: "#f5f5ff" }}
             vertical
           >
             <HomepageHeading />
@@ -180,15 +181,15 @@ ResponsiveContainer.propTypes = {
 }
 
 const PurposeSegment = () => (
-  <Segment style={{ padding: '0em' }} vertical>
+  <Segment style={{ padding: '2em', backgroundColor: "rgba(158, 236, 210, 1)" }} vertical>
     <Container textAlign="center" text >
-      <Header as='h3' style={{ padding: "2em", fontSize: '2.5em', color: green, letterSpacing: "0.05em", fontWeight: "800" }}>
+      <Header as='h3' style={{ fontSize: "2em", padding: "2em" }}>
         {"what we do"}
       </Header>
     </Container>
     <Grid container stackable verticalAlign='middle'>
       <Grid.Row>
-        <Grid.Column width={8}>
+        <Grid.Column width={8} >
           <Header as='h3' style={{ fontSize: '2em' }}>
             {"fresh organic produce"}
           </Header>
@@ -224,7 +225,7 @@ const PurposeSegment = () => (
 const FarmersSegment = () => (
   <Segment style={{ padding: '0em' }} vertical>
     <Container textAlign="center" text >
-      <Header as='h3' style={{ fontSize: '2em' }}>
+      <Header as='h3' style={{ fontSize: '2em', padding: "2em" }}>
         {"Our Farmers"}
       </Header>
     </Container>
@@ -250,7 +251,7 @@ const FarmersSegment = () => (
 );
 
 const App = () => (
-  <ResponsiveContainer >
+  <ResponsiveContainer>
     <PurposeSegment />
     <FarmersSegment />
 

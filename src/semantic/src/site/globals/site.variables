@@ -4,3 +4,5 @@
 
 @purple: #763760;
 @green: #89bf6b;
+@fontName : "Montserrat";
+@textColor: #111105
