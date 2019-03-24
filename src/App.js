@@ -6,6 +6,8 @@ import leafy from "./assets/leafy.png";
 import okdrop from "./assets/okdrop.svg";
 import okdroppng from "./assets/okdrop.png";
 import cherries from "./assets/cherries.jpeg";
+import jordan from "./assets/jordan.png";
+import elena from "./assets/elena.jpg";
 import {
   Button,
   Container,
@@ -328,8 +330,8 @@ const FarmersSegment = () => (
     </Container>
     <Grid celled='internally' columns='equal' stackable>
       <Grid.Row textAlign='left'>
-        <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
-          <Image src={leafy} size="large" circular centered />
+        <Grid.Column verticalAlign="middle" style={{ paddingBottom: '2em', paddingTop: '2em' }}>
+          <Image src={jordan} size="large" circular centered />
         </Grid.Column>
         <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
           <Header as='h3' style={{ fontSize: '2em' }}>
@@ -361,8 +363,8 @@ const FarmersSegment = () => (
 
           </p>
         </Grid.Column>
-        <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
-          <Image src={cherries} size="large" circular centered />
+        <Grid.Column verticalAlign="middle" style={{ paddingBottom: '2em', paddingTop: '2em' }}>
+          <Image src={elena} size="large" circular centered />
         </Grid.Column>
       </Grid.Row>
     </Grid>
