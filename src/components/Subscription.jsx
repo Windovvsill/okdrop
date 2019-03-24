@@ -23,6 +23,29 @@ const contactsApiUrl = "https://api.mailjet.com/v3/REST/contact";
 const mailjetSecretKey = "c6fdbf15db421b045af409d78a8506c0";
 const basicAuth = `Basic ${btoa(`${mailjetApiKey}:${mailjetSecretKey}`)}`;
 
+export class MJSubscriptSegment extends React.Component {
+  render() {
+    return <Segment margin raised >
+      <Grid>
+        <Grid.Row>
+          <Header as='h3' style={{ fontSize: '2em' }}>
+            {"Sign up to stay updated on our progress"}
+          </Header>
+
+          <div class="mj-w-button mj-w-btn" data-token="033b2f2a4df6abd5eaab98e7a07dd0e9">
+            <a href="#" data-token="033b2f2a4df6abd5eaab98e7a07dd0e9" onclick="mjOpenPopin(event, this)">
+              <Button primary fluid >
+                {"Subscribe"}
+                <Icon name="mail" />
+              </Button>
+            </a>
+          </div>
+        </Grid.Row>
+      </Grid>
+    </Segment >;
+  }
+}
+
 export class SubscriptionSegment extends React.Component {
   state = {
     email: "",
@@ -46,7 +69,6 @@ export class SubscriptionSegment extends React.Component {
   }
 
   render() {
-    console.log(this.state.isLoading);
     return <Segment margin raised >
       <Header as='h3' style={{ fontSize: '2em' }}>
         {"Sign up to stay updated on our progress"}
