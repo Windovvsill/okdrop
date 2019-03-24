@@ -38,13 +38,17 @@ const getWidth = () => {
  * such things.
  */
 const HomepageHeading = ({ mobile }) => (
-  <Container  
-  text
-  style={{
-    maxHeight: "900px",
-    height: "900px",
-  }}>
-
+  <Container
+    text
+    style={{
+      maxHeight: "900px",
+      height: "900px",
+    }}>
+    <div class="ui top fixed white icon menu main">
+      <a class="active item right">Get Started</a>
+      <a class="item ">What's inside the box</a>
+      <a class="item">Sign up</a>
+    </div>
     <Image centered size="massive" src={okdrop} />
     <Header
       as='h2'
@@ -91,7 +95,7 @@ class DesktopContainer extends Component {
             textAlign='center'
             style={{
               minHeight: 400, padding: '4em 0em',
-               backgroundColor: "#ffffff",
+              backgroundColor: "#ffffff",
               // backgroundImage: `url(https://i.imgur.com/MVZRqqn.jpg)`,
               background: "linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url(https://i.imgur.com/MVZRqqn.jpg)",
               backgroundSize: "cover",
