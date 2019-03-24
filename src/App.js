@@ -300,7 +300,7 @@ class App extends React.Component {
 
       <Segment style={{ padding: '8em 0em' }} vertical>
         <Container text>
-          <SubscriptionSegment onSubscribe={this.onSubscribe} />
+          <MJSubscriptSegment />
           <Divider
             as='h4'
             className='header'
