@@ -36,8 +36,8 @@ const getWidth = () => {
  * such things.
  */
 const HomepageHeading = ({ mobile }) => (
-  <Container >
-    <Image centered src={okdrop} style={{ maxWidth: "512px" }} />
+  <Container text>
+    <Image centered size="large" src={okdrop}></Image>
     <Header
       as='h2'
       content='Seamlessly providing fresh, organic, local Okanagan produce to the Lower Mainland directly from farmers, through partnerships with like-minded small businesses'
@@ -45,7 +45,6 @@ const HomepageHeading = ({ mobile }) => (
         fontSize: mobile ? '1.5em' : '1.7em',
         fontWeight: 'normal',
         marginTop: mobile ? '0.5em' : '1.5em',
-        fontFamily: "Montserrat, sans-serif"
       }}
     />
     <Button primary size='huge'>
