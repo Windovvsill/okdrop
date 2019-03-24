@@ -43,7 +43,13 @@ const HomepageHeading = ({ mobile }) => (
     style={{
       maxHeight: "900px",
       height: "900px",
-    }}>
+    }}
+  >
+    <div class="ui top fixed white icon menu main" >
+      <a class="active item right" > Get Started</a >
+      <a class="item " > What's inside the box</a>
+      <a class="item">Sign up</a>
+    </div >
     <Image centered size="massive" src={okdrop} />
     <Header
       as='h2'
@@ -196,22 +202,26 @@ const PurposeSegment = () => (
   <Segment style={{
     paddingBottom: '4em',
     backgroundColor: "rgba(55,33,55, 1)",
-    backgroundImage: "radial-gradient(at 50% 100%, rgba(85, 21, 30, 1), rgba(85, 21, 30, 1), rgb(80, 20, 55, 1))",
+    // backgroundImage: "radial-gradient(at 50% 100%, rgba(85, 21, 30, 1), rgba(85, 21, 30, 1), rgb(80, 20, 55, 1))",
+    backgroundImage: "radial-gradient(at 50% 100%, rgba(0, 0, 0, 1), rgba(40, 30, 40, 1), rgba(40, 30, 40, 1))",
+    // backgroundImage: "radial-gradient(at 50% 0%, rgba(40, 30, 40, 1), rgba(0, 0, 0, 1))",
     boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
   }}
     vertical
     inverted
   >
-    <Container textAlign="center" text inverted style={{ padding: "1em"}}>
-      <Header as='h3' style={{ fontSize: '3em', padding: "1em", 
-      position: "absolute", 
-      left: "50%",
-      transform: "translateX(-50%)",
-      top: "-90px",
-        backgroundImage: "radial-gradient(at 50% 100%, rgba(85, 21, 30, 1), rgba(85, 21, 30, 1))",
+    <Container textAlign="center" text inverted style={{ padding: "1em" }}>
+      <Header as='h3' style={{
+        fontSize: '3em', padding: "1em",
+        position: "absolute",
+        left: "50%",
+        transform: "translateX(-50%)",
+        top: "-90px",
+        // backgroundImage: "radial-gradient(at 50% 100%, rgba(85, 21, 30, 1), rgba(85, 21, 30, 1))",
+        backgroundImage: "radial-gradient(at 50% 0%, rgba(40, 30, 40, 1), rgba(0, 0, 0, 1))",
         borderRadius: "25px",
-      }} 
-      inverted
+      }}
+        inverted
       >
         {"Grow Together"}
       </Header>
