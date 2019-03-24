@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './semantic/dist/semantic.css';
 import PropTypes from 'prop-types';
-import cherry from "./assets/cherry.jpg"
-import okdrop from "./assets/okdrop.svg"
+import cherry from "./assets/cherry.jpg";
+import leafy from "./assets/leafy.png";
+import okdrop from "./assets/okdrop.svg";
+import cherries from "./assets/cherries.jpeg";
 import {
   Button,
   Container,
@@ -36,13 +38,14 @@ const getWidth = () => {
  * such things.
  */
 const HomepageHeading = ({ mobile }) => (
-  <Container text>
+  <Container text >
+
     <Image centered size="large" src={okdrop}></Image>
     <Header
       as='h2'
       content='Seamlessly providing fresh, organic, local Okanagan produce to the Lower Mainland directly from farmers, through partnerships with like-minded small businesses'
       style={{
-        fontSize: mobile ? '1.5em' : '1.7em',
+        fontSize: mobile ? '1em' : '1.5em',
         fontWeight: 'normal',
         marginTop: mobile ? '0.5em' : '1.5em',
       }}
@@ -51,7 +54,7 @@ const HomepageHeading = ({ mobile }) => (
       Get Started
       <Icon name='right arrow' />
     </Button>
-  </Container>
+  </Container >
 )
 
 HomepageHeading.propTypes = {
@@ -81,7 +84,10 @@ class DesktopContainer extends Component {
         >
           <Segment
             textAlign='center'
-            style={{ minHeight: 400, padding: '4em 0em', backgroundColor: "#f5f5ff" }}
+            style={{
+              minHeight: 400, padding: '4em 0em', backgroundColor: "#ffffff",
+              backgroundImage: `url(https://ak8.picdn.net/shutterstock/videos/4664138/thumb/1.jpg)`
+            }}
             vertical
           >
             <HomepageHeading />
@@ -180,24 +186,37 @@ ResponsiveContainer.propTypes = {
 }
 
 const PurposeSegment = () => (
-  <Segment style={{ padding: '2em', backgroundColor: "rgba(158, 236, 210, 1)" }} vertical>
-    <Container textAlign="center" text >
-      <Header as='h3' style={{ fontSize: "2em", padding: "2em" }}>
-        {"what we do"}
+  <Segment style={{
+    paddingBottom: '4em',
+    backgroundColor: "rgba(55,33,55, 1)",
+    backgroundImage: "radial-gradient(at 50% 100%, rgba(123, 22, 255, 0.75), rgb(15, 1, 94))"
+  }}
+    vertical
+    inverted
+  >
+    <Container textAlign="center" text inverted>
+      <Header as='h3' style={{ fontSize: '2em', padding: "2em" }} inverted>
+        {"Our Farmers"}
       </Header>
     </Container>
     <Grid container stackable verticalAlign='middle'>
       <Grid.Row>
-        <Grid.Column width={8} >
-          <Header as='h3' style={{ fontSize: '2em' }}>
+        <Grid.Column width={1}>
+          <Icon name="right arrow" size="huge" />
+        </Grid.Column>
+        <Grid.Column width={7} >
+          <Header as='h3' style={{ fontSize: '2em' }} inverted>
             {"fresh organic produce"}
           </Header>
           <p style={{ fontSize: '1.33em' }}>
             {"We selects the best organic farms in the Okanagan to..."}
           </p>
         </Grid.Column>
-        <Grid.Column width={8}>
-          <Header as='h3' style={{ fontSize: '2em' }}>
+        <Grid.Column width={1}>
+          <Icon name="right arrow" size="huge" />
+        </Grid.Column>
+        <Grid.Column width={7}>
+          <Header as='h3' style={{ fontSize: '2em' }} inverted>
             {"delivered to your backdoor"}
           </Header>
           <p style={{ fontSize: '1.33em' }}>
@@ -207,8 +226,11 @@ const PurposeSegment = () => (
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>
-        <Grid.Column width={16}>
-          <Header as='h3' style={{ fontSize: '2em' }}>
+        <Grid.Column width={1}>
+          <Icon name="right arrow" size="huge" />
+        </Grid.Column>
+        <Grid.Column width={15}>
+          <Header as='h3' style={{ fontSize: '2em' }} inverted>
             {"pick it up from one of our partners"}
           </Header>
           <p style={{ fontSize: '1.33em' }}>
@@ -222,7 +244,13 @@ const PurposeSegment = () => (
 );
 
 const FarmersSegment = () => (
-  <Segment style={{ padding: '0em' }} vertical>
+  <Segment
+    style={{
+      padding: '0em',
+      backgroundImage: "radial-gradient(at 50% 100%, rgba(233, 255, 255, 1), rgb(255, 255, 233, 1))"
+    }}
+    vertical
+  >
     <Container textAlign="center" text >
       <Header as='h3' style={{ fontSize: '2em', padding: "2em" }}>
         {"Our Farmers"}
@@ -230,19 +258,29 @@ const FarmersSegment = () => (
     </Container>
     <Grid celled='internally' columns='equal' stackable>
       <Grid.Row textAlign='left'>
-        <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+        <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
+          <Image src={leafy} size="large" circular centered />
+        </Grid.Column>
+        <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
           <Header as='h3' style={{ fontSize: '2em' }}>
             {"Farmer 1"}
           </Header>
-          <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
+          <p style={{ fontSize: '1.33em' }}>
+            {"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc."}
+          </p>
         </Grid.Column>
       </Grid.Row>
       <Grid.Row textAlign='left'>
-        <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+        <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
           <Header as='h3' style={{ fontSize: '2em' }}>
-            {"Farmer 2"}
+            {"Farmer 1"}
           </Header>
-          <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
+          <p style={{ fontSize: '1.33em' }}>
+            {"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc."}
+          </p>
+        </Grid.Column>
+        <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
+          <Image src={leafy} size="large" circular centered />
         </Grid.Column>
       </Grid.Row>
     </Grid>
