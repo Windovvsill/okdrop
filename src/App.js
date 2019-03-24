@@ -3,13 +3,11 @@ import './semantic/dist/semantic.css';
 import PropTypes from 'prop-types';
 import cherry from "./assets/cherry.jpg";
 import leafy from "./assets/leafy.png";
-import okdrop from "./assets/okdrop.svg";
 import okdroppng from "./assets/okdrop.png";
 import cherries from "./assets/cherries.jpeg";
 import jordan from "./assets/jordan.png";
 import elena from "./assets/elena.jpg";
 import {
-  Button,
   Container,
   Divider,
   Grid,
@@ -17,12 +15,9 @@ import {
   Icon,
   Image,
   List,
-  Menu,
   Responsive,
   Segment,
-  Sidebar,
   Visibility,
-  Input,
 } from 'semantic-ui-react';
 import { SubscriptionSegment } from "./components/Subscription";
 import { OrderSegment } from "./components/Order";
@@ -67,12 +62,13 @@ const getWidth = () => {
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
  * such things.
  */
-const HomepageHeading = ({ mobile, props }) => (
+const HomepageHeading = ({ mobile }) => (
   <Container
     text
     style={{
       maxHeight: "900px",
       height: "900px",
+      paddingTop: mobile ? "4em" : "",
     }}
   >
 
@@ -161,59 +157,15 @@ class MobileContainer extends Component {
 
   render() {
     const { children } = this.props
-    const { sidebarOpened } = this.state
 
     return (
       <Responsive
-        as={Sidebar.Pushable}
+        // as={Sidebar.Pushable}
         getWidth={getWidth}
         maxWidth={Responsive.onlyMobile.maxWidth}
       >
-        <Sidebar
-          as={Menu}
-          animation='push'
-          inverted
-          onHide={this.handleSidebarHide}
-          vertical
-          visible={sidebarOpened}
-        >
-          <Menu.Item as='a' active>
-            Home
-          </Menu.Item>
-          <Menu.Item as='a'>Work</Menu.Item>
-          <Menu.Item as='a'>Company</Menu.Item>
-          <Menu.Item as='a'>Careers</Menu.Item>
-          <Menu.Item as='a'>Log in</Menu.Item>
-          <Menu.Item as='a'>Sign Up</Menu.Item>
-        </Sidebar>
-
-        <Sidebar.Pusher dimmed={sidebarOpened}>
-          <Segment
-            inverted
-            textAlign='center'
-            style={{ minHeight: 350, padding: '1em 0em' }}
-            vertical
-          >
-            <Container>
-              <Menu inverted pointing secondary size='large'>
-                <Menu.Item onClick={this.handleToggle}>
-                  <Icon name='sidebar' />
-                </Menu.Item>
-                <Menu.Item position='right'>
-                  <Button as='a' inverted>
-                    Log in
-                  </Button>
-                  <Button as='a' inverted style={{ marginLeft: '0.5em' }}>
-                    Sign Up
-                  </Button>
-                </Menu.Item>
-              </Menu>
-            </Container>
-            <HomepageHeading mobile />
-          </Segment>
-
-          {children}
-        </Sidebar.Pusher>
+        <HomepageHeading mobile />
+        {children}
       </Responsive>
     )
   }
@@ -274,36 +226,36 @@ const PurposeSegment = () => (
       </Grid.Column>
       <Grid.Column width={8} >
 
-        <Grid.Row style={{ padding: "2em 0em"}}>
-            <Header as='h3' style={{ fontSize: '2em' }} inverted>
-              <Image src={cherries} size="medium" circular centered />
-              {`Fresh Organic Fruit`}
-            </Header>
-            <p style={{ fontSize: '1.25em' }}>
-              {`Okanagan Drop is a weekly subscription service that brings you high-quality organic produce to Vancouver. 
+        <Grid.Row style={{ padding: "2em 0em" }}>
+          <Header as='h3' style={{ fontSize: '2em' }} inverted>
+            <Image src={cherries} size="medium" circular centered />
+            {`Fresh Organic Fruit`}
+          </Header>
+          <p style={{ fontSize: '1.25em' }}>
+            {`Okanagan Drop is a weekly subscription service that brings you high-quality organic produce to Vancouver. 
 This weekly box will have $50 worth of produce and will run from June-October.`}
-            </p>
+          </p>
         </Grid.Row>
 
 
         <Grid.Row style={{ padding: "2em 0em" }}>
-            <Header as='h3' style={{ fontSize: '2em' }} inverted>
-              <Image src={leafy} size="medium" circular centered />
-              {"Delivered to your Backdoor"}
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              {`Farmer Jordan will drive down to Vancouver and drop off these beautiful boxes in strategic at strategic partner pick up locations.`}
-            </p>
+          <Header as='h3' style={{ fontSize: '2em' }} inverted>
+            <Image src={leafy} size="medium" circular centered />
+            {"Delivered to your Backdoor"}
+          </Header>
+          <p style={{ fontSize: '1.33em' }}>
+            {`Farmer Jordan will drive down to Vancouver and drop off these beautiful boxes in strategic at strategic partner pick up locations.`}
+          </p>
         </Grid.Row>
 
         <Grid.Row style={{ padding: "2em 0em" }}>
-            <Header as='h3' style={{ fontSize: '2em' }} inverted>
-              <Image src={cherry} size="medium" circular centered />
-              {"pick it up from one of our partners"}
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              Yes that's right, you thought it was the stuff of dreams, but even bananas can be
-              bioengineered.
+          <Header as='h3' style={{ fontSize: '2em' }} inverted>
+            <Image src={cherry} size="medium" circular centered />
+            {"pick it up from one of our partners"}
+          </Header>
+          <p style={{ fontSize: '1.33em' }}>
+            Yes that's right, you thought it was the stuff of dreams, but even bananas can be
+            bioengineered.
             </p>
 
         </Grid.Row>
