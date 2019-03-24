@@ -25,7 +25,8 @@ const basicAuth = `Basic ${btoa(`${mailjetApiKey}:${mailjetSecretKey}`)}`;
 
 export class SubscriptionSegment extends React.Component {
   state = {
-    email: ""
+    email: "",
+    isLoading: false,
   };
 
   constructor(props) {
@@ -45,6 +46,7 @@ export class SubscriptionSegment extends React.Component {
   }
 
   render() {
+    console.log(this.state.isLoading);
     return <Segment margin raised >
       <Header as='h3' style={{ fontSize: '2em' }}>
         {"Sign up to stay updated on our progress"}
@@ -55,7 +57,22 @@ export class SubscriptionSegment extends React.Component {
             <Input fluid label="email" placeholder="cherry@lover.ca" onChange={this.onChange} />
           </Grid.Column>
           <Grid.Column width={4} fluid>
-            <Modal trigger={<Button fluid size="large" primary>{"Subscribe"}</Button>}>
+            <Modal trigger={
+              <Button
+                loading={this.state.isLoading}
+                disabled={this.state.isLoading || !this.state.email}
+                onClick={() => {
+                  if (this.state.email)
+                    this.setState({ isLoading: true }, () => setTimeout(() => this.setState({ isLoading: false }), 3000))
+                }
+                }
+                fluid
+                size="large"
+                primary
+              >
+                {"Subscribe"}
+              </Button>
+            }>
               <Modal.Header>Thanks for Subscribing!</Modal.Header>
               <Modal.Content image>
                 <Image wrapped size='small' src={require("../assets/cherries.jpeg")} />
