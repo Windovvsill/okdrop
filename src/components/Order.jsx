@@ -23,7 +23,7 @@ export class OrderSegment extends React.Component {
           <Grid.Column width={4} verticalAlign="middle">
 
             <Modal trigger={
-              <Button as='a' size='large' primary icon>
+              <Button as='a' size='large' color="red" icon>
                 {"Pre-Order"}
                 <Icon name='right arrow' />
               </Button>
