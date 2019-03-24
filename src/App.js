@@ -34,7 +34,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
       draggable: true, // make map draggable
       keyboardShortcuts: false, // disable keyboard shortcuts
       scaleControl: true, // allow scale controle
-      scrollwheel: true, // allow scroll wheel
+      scrollwheel: false, // allow scroll wheel
     }}
   >
     {props.isMarkerShown && <Marker position={{ lat: 49.281480, lng: -123.085070 }} />}
@@ -44,24 +44,12 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
   </GoogleMap>
 ));
 
-
-
-const purple = "#763760";
-const green = "#89BF6B";
-
-// Heads up!
-// We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
-// For more advanced usage please check Responsive docs under the "Usage" section.
 const getWidth = () => {
   const isSSR = typeof window === 'undefined';
 
   return isSSR ? Responsive.onlyTablet.minWidth : window.innerWidth;
 }
 
-/* eslint-disable react/no-multi-comp */
-/* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
- * such things.
- */
 const HomepageHeading = ({ mobile }) => (
   <Container
     text
@@ -129,7 +117,6 @@ class DesktopContainer extends Component {
             style={{
               minHeight: 400, padding: '4em 0em',
               backgroundColor: "#ffffff",
-              // backgroundImage: `url(https://i.imgur.com/MVZRqqn.jpg)`,
               background: "linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url(https://i.imgur.com/MVZRqqn.jpg)",
               backgroundSize: "cover",
             }}
@@ -228,7 +215,7 @@ const PurposeSegment = () => (
 
         <Grid.Row style={{ padding: "2em 0em" }}>
           <Header as='h3' style={{ fontSize: '2em' }} inverted>
-            <Image src={cherries} size="medium" circular centered />
+            <Image src={cherries} size="large" circular centered />
             {`Fresh Organic Fruit`}
           </Header>
           <p style={{ fontSize: '1.25em' }}>
@@ -240,24 +227,12 @@ This weekly box will have $50 worth of produce and will run from June-October.`}
 
         <Grid.Row style={{ padding: "2em 0em" }}>
           <Header as='h3' style={{ fontSize: '2em' }} inverted>
-            <Image src={leafy} size="medium" circular centered />
+            <Image src={leafy} size="large" circular centered />
             {"Delivered to your Backdoor"}
           </Header>
           <p style={{ fontSize: '1.33em' }}>
-            {`Farmer Jordan will drive down to Vancouver and drop off these beautiful boxes in strategic at strategic partner pick up locations.`}
+            {`Farmer Jordan will drive down to Vancouver and drop off these beautiful boxes in strategic at strategic partner pick up locations. You can sign up for 10 weeks or 20 weeks. It’s like having Okanagan orchards in your backyard.`}
           </p>
-        </Grid.Row>
-
-        <Grid.Row style={{ padding: "2em 0em" }}>
-          <Header as='h3' style={{ fontSize: '2em' }} inverted>
-            <Image src={cherry} size="medium" circular centered />
-            {"pick it up from one of our partners"}
-          </Header>
-          <p style={{ fontSize: '1.33em' }}>
-            Yes that's right, you thought it was the stuff of dreams, but even bananas can be
-            bioengineered.
-            </p>
-
         </Grid.Row>
       </Grid.Column>
     </Grid>
@@ -268,12 +243,9 @@ const FarmersSegment = () => (
   <Segment
     style={{
       padding: '0em',
-      // backgroundImage: "radial-gradient(at 50% 100%, rgba(233, 255, 255, 1), rgb(255, 255, 233, 1))"
     }}
     vertical
   >
-    <Container textAlign="center" text >
-    </Container>
     <Grid celled='internally' columns='equal' stackable>
       <Grid.Row textAlign='left'>
         <Grid.Column verticalAlign="middle" style={{ paddingBottom: '2em', paddingTop: '2em' }}>
@@ -306,7 +278,6 @@ const FarmersSegment = () => (
           </p>
           <p style={{ fontSize: '1.33em' }}>
             <strong>Why she loves Okanagan Drop</strong>: She is a busy mother feeding 3 teens in the lower mainland, so you can imagine they go through A LOT of food. She strives to feed her family with healthy, organic, high-quality foods, but with everything always on the go, she has a difficult time finding Okanagan produce. She doesn’t want to go out of her way to search Okanagan. But she does support local farmers and would like to know where her food comes. The whole aspect of receiving weekly boxes of Okanagan produce gives her the experience of having an orchard right in her backyard. Also, it teaches her younger kids how as the season progresses how different fruits and veggies ripen.
-
           </p>
         </Grid.Column>
         <Grid.Column verticalAlign="middle" style={{ paddingBottom: '2em', paddingTop: '2em' }}>
@@ -319,7 +290,6 @@ const FarmersSegment = () => (
 
 class App extends React.Component {
   onSubscribe() {
-
   }
 
   render() {
@@ -339,32 +309,7 @@ class App extends React.Component {
           >
             {"Or"}
           </Divider>
-
           <OrderSegment />
-          {/* <Segment inverted raised style={{
-            backgroundImage: "radial-gradient(at 50% 100%, rgba(90, 21, 30, 1), rgba(85, 0, 30, 1), rgb(80, 20, 77, 1))",
-          }}>
-            <Grid>
-              <Grid.Row columns={2} inverted>
-                <Grid.Column width={12} inverted>
-                  
-                    <Header as='h3' style={{ fontSize: '2em' }} inverted>
-                      {"Ready to order?"}
-                    </Header>
-                    <p style={{ fontSize: '1.33em' }}>
-                      {"You really know your stuff!"}
-                    </p>
-                </Grid.Column>
-                <Grid.Column width={4} verticalAlign="middle">
-                    <Button as='a' size='large' primary icon>
-                      {"Pre-Order"}
-                      <Icon name='right arrow' />
-                    </Button>
-
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
-          </Segment> */}
         </Container>
       </Segment>
       <Segment inverted vertical style={{ padding: '5em 0em' }}>
@@ -375,14 +320,14 @@ class App extends React.Component {
         <Container>
           <Grid divided inverted stackable>
             <Grid.Row>
-              <Grid.Column width={3}>
+              <Grid.Column width={5}>
                 <Header inverted as='h4' content='About' />
                 <List link inverted>
                   <List.Item as='a'>Team</List.Item>
                   <List.Item as='a'>Contact Us</List.Item>
                 </List>
               </Grid.Column>
-              <Grid.Column width={3}>
+              <Grid.Column width={5}>
                 <Header inverted as='h4' content='Services' />
                 <List link inverted>
                   <List.Item as='a'>Season Pre-Order</List.Item>
@@ -390,7 +335,7 @@ class App extends React.Component {
                   <List.Item as='a'>How Does It Work</List.Item>
                 </List>
               </Grid.Column>
-              <Grid.Column width={7}>
+              <Grid.Column width={6}>
                 <Header as='h4' inverted>
                   Get in touch
               </Header>
