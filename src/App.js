@@ -38,12 +38,12 @@ const getWidth = () => {
  * such things.
  */
 const HomepageHeading = ({ mobile }) => (
-  <Container  
-  text
-  style={{
-    maxHeight: "900px",
-    height: "900px",
-  }}>
+  <Container
+    text
+    style={{
+      maxHeight: "900px",
+      height: "900px",
+    }}>
 
     <Image centered size="massive" src={okdrop} />
     <Header
@@ -91,7 +91,7 @@ class DesktopContainer extends Component {
             textAlign='center'
             style={{
               minHeight: 400, padding: '4em 0em',
-               backgroundColor: "#ffffff",
+              backgroundColor: "#ffffff",
               // backgroundImage: `url(https://i.imgur.com/MVZRqqn.jpg)`,
               background: "linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url(https://i.imgur.com/MVZRqqn.jpg)",
               backgroundSize: "cover",
@@ -197,15 +197,24 @@ const PurposeSegment = () => (
   <Segment style={{
     paddingBottom: '4em',
     backgroundColor: "rgba(55,33,55, 1)",
-    backgroundImage: "radial-gradient(at 50% 100%, rgba(85, 21, 30, 1), rgb(90, 29, 55))",
+    backgroundImage: "radial-gradient(at 50% 100%, rgba(85, 21, 30, 1), rgba(85, 21, 30, 1), rgb(80, 20, 55, 1))",
     boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
   }}
     vertical
     inverted
   >
-    <Container textAlign="center" text inverted>
-      <Header as='h3' style={{ fontSize: '2em', padding: "2em" }} inverted>
-        {"Our Farmers"}
+    <Container textAlign="center" text inverted style={{ padding: "1em"}}>
+      <Header as='h3' style={{ fontSize: '3em', padding: "1em", 
+      position: "absolute", 
+      left: "50%",
+      transform: "translateX(-50%)",
+      top: "-90px",
+        backgroundImage: "radial-gradient(at 50% 100%, rgba(85, 21, 30, 1), rgba(85, 21, 30, 1))",
+        borderRadius: "25px",
+      }} 
+      inverted
+      >
+        {"Grow Together"}
       </Header>
     </Container>
     <Grid container stackable verticalAlign='middle'>
@@ -217,7 +226,7 @@ const PurposeSegment = () => (
           <Header as='h3' style={{ fontSize: '2em' }} inverted>
             {"fresh organic produce"}
           </Header>
-          <p style={{ fontSize: '1.33em' }}>
+          <p style={{ fontSize: '1.25em' }}>
             {"We selects the best organic farms in the Okanagan to..."}
           </p>
         </Grid.Column>
@@ -289,7 +298,7 @@ const FarmersSegment = () => (
           </p>
         </Grid.Column>
         <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
-          <Image src={leafy} size="large" circular centered />
+          <Image src={cherries} size="large" circular centered />
         </Grid.Column>
       </Grid.Row>
     </Grid>
