@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import cherry from "./assets/cherry.jpg";
 import leafy from "./assets/leafy.png";
 import okdrop from "./assets/okdrop.svg";
+import okdroppng from "./assets/okdrop.png";
 import cherries from "./assets/cherries.jpeg";
 import {
   Button,
@@ -21,14 +22,15 @@ import {
   Visibility,
   Input,
 } from 'semantic-ui-react';
+import { SubscriptionSegment } from "./components/Subscription";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
 // https://tomchentw.github.io/react-google-maps/#usage 
 //https://blog.alexdevero.com/custom-styled-google-map-react/ 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
   <GoogleMap
-    defaultZoom={11}
-    defaultCenter={{ lat: 49.281480, lng: -123.085070 }}
+    defaultZoom={12}
+    defaultCenter={{ lat: 49.292480, lng: -123.089070 }}
     defaultOptions={{
       disableDefaultUI: true, // disable default map UI
       draggable: true, // make map draggable
@@ -42,7 +44,9 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     {props.isMarkerShown && <Marker position={{ lat: 49.268880, lng: -123.104567 }} />}
     {props.isMarkerShown && <Marker position={{ lat: 49.323776, lng: -123.102458 }} />}
   </GoogleMap>
-))
+));
+
+
 
 const purple = "#763760";
 const green = "#89BF6B";
@@ -60,7 +64,7 @@ const getWidth = () => {
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
  * such things.
  */
-const HomepageHeading = ({ mobile }) => (
+const HomepageHeading = ({ mobile, props }) => (
   <Container
     text
     style={{
@@ -70,21 +74,12 @@ const HomepageHeading = ({ mobile }) => (
   >
 
 
-    <MyMapComponent
-      isMarkerShown
-      googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfzZcRoNSI796bqhDRYRCS44csbZ8rNOY&v=3.exp&libraries=geometry,drawing,places"
-      loadingElement={<div style={{ height: `100%` }} />}
-      containerElement={<div style={{ height: `400px` }} />}
-      mapElement={<div style={{ height: `100%` }} />}
-    />
-
-
     <div class="ui top fixed white icon menu main" >
       <a class="active item right" > Get Started</a >
       <a class="item " > What's inside the box</a>
       <a class="item">Sign up</a>
     </div >
-    <Image centered size="massive" src={okdrop} />
+    <Image centered size="massive" src={okdroppng} />
     <Header
       textAlign="center"
       as='h2'
@@ -98,25 +93,7 @@ const HomepageHeading = ({ mobile }) => (
       {"An Okanagan orchard in your backyard"}
     </Header>
 
-    {/* The subscribe box */}
-    <Segment margin raised>
-
-      <Header as='h3' style={{ fontSize: '2em' }}>
-        {"Sign up to stay updated on our progress"}
-      </Header>
-      <Grid>
-        <Grid.Row>
-          <Grid.Column width={12} stretched fluid>
-            <Input fluid label="email" placeholder="cherry@lover.ca" />
-          </Grid.Column>
-          <Grid.Column width={4} fluid>
-            <Button primary as='a' size='large' fluid>
-              {"Subscribe"}
-            </Button>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Segment>
+    <SubscriptionSegment/>
 
 
   </Container >
@@ -125,6 +102,7 @@ const HomepageHeading = ({ mobile }) => (
 HomepageHeading.propTypes = {
   mobile: PropTypes.bool,
 }
+
 
 /* Heads up!
  * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however, it can be implemented easily.
@@ -265,7 +243,7 @@ const PurposeSegment = () => (
     vertical
     inverted
   >
-    <Container textAlign="center" text inverted style={{ padding: "1em" }}>
+    <Container textAlign="center" inverted style={{ padding: "1em" }}>
       <Header as='h3' style={{
         fontSize: '3em', padding: "1em",
         position: "absolute",
@@ -281,7 +259,7 @@ const PurposeSegment = () => (
         {"Grow Together"}
       </Header>
     </Container>
-    <Grid container stackable verticalAlign='middle'>
+    <Grid stackable verticalAlign='middle'>
       <Grid.Row>
         <Grid.Column width={1}>
           <Icon name="right arrow" size="huge" />
@@ -308,10 +286,19 @@ const PurposeSegment = () => (
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>
+        <Grid.Column width={8}>
+          <MyMapComponent
+            isMarkerShown
+            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfzZcRoNSI796bqhDRYRCS44csbZ8rNOY&v=3.exp&libraries=geometry,drawing,places"
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={<div style={{ height: `400px` }} />}
+            mapElement={<div style={{ height: `100%` }} />}
+          />
+        </Grid.Column>
         <Grid.Column width={1}>
           <Icon name="right arrow" size="huge" />
         </Grid.Column>
-        <Grid.Column width={15}>
+        <Grid.Column width={7}>
           <Header as='h3' style={{ fontSize: '2em' }} inverted>
             {"pick it up from one of our partners"}
           </Header>
@@ -322,6 +309,9 @@ const PurposeSegment = () => (
         </Grid.Column>
       </Grid.Row>
     </Grid>
+    <Segment>
+
+    </Segment>
   </Segment>
 );
 
@@ -369,85 +359,75 @@ const FarmersSegment = () => (
   </Segment>
 );
 
-const App = () => (
-  <ResponsiveContainer>
-    <PurposeSegment />
-    <FarmersSegment />
+class App extends React.Component {
+  onSubscribe() {
 
-    <Segment style={{ padding: '8em 0em' }} vertical>
-      <Container text>
-        <Header as='h3' style={{ fontSize: '2em' }}>
-          {"Want to stay updated?"}
+  }
+
+  render() {
+
+    return <ResponsiveContainer>
+      <PurposeSegment />
+      <FarmersSegment />
+
+      <Segment style={{ padding: '8em 0em' }} vertical>
+        <Container text>
+          <SubscriptionSegment onSubscribe={this.onSubscribe} />
+          <Divider
+            as='h4'
+            className='header'
+            horizontal
+            style={{ margin: '3em 0em', textTransform: 'uppercase' }}
+          >
+            {"Or"}
+          </Divider>
+          <Header as='h3' style={{ fontSize: '2em' }}>
+            Ready to order?
         </Header>
-        <p style={{ fontSize: '1.33em' }}>
-          {"We're just getting started!"}
-        </p>
-        <Grid>
-          <Grid.Row>
-            <Grid.Column width={12}>
-              <Input fluid label="email" placeholder="cherry@lover.ca" />
-            </Grid.Column>
-            <Grid.Column width={4}>
-              <Button primary as='a' size='large'>
-                {"Subscribe"}
-              </Button>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-        <Divider
-          as='h4'
-          className='header'
-          horizontal
-          style={{ margin: '3em 0em', textTransform: 'uppercase' }}
-        >
-          {"Or"}
-        </Divider>
-        <Header as='h3' style={{ fontSize: '2em' }}>
-          Ready to order?
-        </Header>
-        <p style={{ fontSize: '1.33em' }}>
-          {"You really know your stuff!"}
-        </p>
-        <Button as='a' size='large' primary>
-          {"Pre-Order"}
-        </Button>
-      </Container>
-    </Segment>
-    <Segment inverted vertical style={{ padding: '5em 0em' }}>
-      <footer class="ui inverted center aligned segment">
-        <a href="https://www.instagram.com/unearthedfarm/"><i class="big instagram icon"></i></a>
-        <a href="https://twitter.com/OKhomestead"><i class="big twitter icon"></i></a>
-        <a href="https://www.facebook.com/unearthedfarm/"><i class="big facebook icon"></i></a></footer>
-      <Container>
-        <Grid divided inverted stackable>
-          <Grid.Row>
-            <Grid.Column width={3}>
-              <Header inverted as='h4' content='About' />
-              <List link inverted>
-                <List.Item as='a'>Team</List.Item>
-                <List.Item as='a'>Contact Us</List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={3}>
-              <Header inverted as='h4' content='Services' />
-              <List link inverted>
-                <List.Item as='a'>Season Pre-Order</List.Item>
-                <List.Item as='a'>FAQ</List.Item>
-                <List.Item as='a'>How Does It Work</List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={7}>
-              <Header as='h4' inverted>
-                Get in touch
+          <p style={{ fontSize: '1.33em' }}>
+            {"You really know your stuff!"}
+          </p>
+          <Button as='a' size='large' primary>
+            {"Pre-Order"}
+          </Button>
+        </Container>
+      </Segment>
+      <Segment inverted vertical style={{ padding: '5em 0em' }}>
+        <footer class="ui inverted center aligned segment">
+          <a href="https://www.instagram.com/unearthedfarm/"><i class="big instagram icon"></i></a>
+          <a href="https://twitter.com/OKhomestead"><i class="big twitter icon"></i></a>
+          <a href="https://www.facebook.com/unearthedfarm/"><i class="big facebook icon"></i></a></footer>
+        <Container>
+          <Grid divided inverted stackable>
+            <Grid.Row>
+              <Grid.Column width={3}>
+                <Header inverted as='h4' content='About' />
+                <List link inverted>
+                  <List.Item as='a'>Team</List.Item>
+                  <List.Item as='a'>Contact Us</List.Item>
+                </List>
+              </Grid.Column>
+              <Grid.Column width={3}>
+                <Header inverted as='h4' content='Services' />
+                <List link inverted>
+                  <List.Item as='a'>Season Pre-Order</List.Item>
+                  <List.Item as='a'>FAQ</List.Item>
+                  <List.Item as='a'>How Does It Work</List.Item>
+                </List>
+              </Grid.Column>
+              <Grid.Column width={7}>
+                <Header as='h4' inverted>
+                  Get in touch
               </Header>
-              <p>
-                {"We might be out in the farm now, but we'll get back to you!"}
-              </p>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Container>
-    </Segment>
-  </ResponsiveContainer>
-)
+                <p>
+                  {"We might be out in the farm now, but we'll get back to you!"}
+                </p>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Container>
+      </Segment>
+    </ResponsiveContainer>;
+  }
+}
 export default App;
