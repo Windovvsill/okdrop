@@ -257,62 +257,56 @@ const PurposeSegment = () => (
       }}
         inverted
       >
-        {"Grow Together"}
+        {"How It Works"}
       </Header>
     </Container>
-    <Grid stackable verticalAlign='middle'>
-      <Grid.Row>
-        <Grid.Column width={1}>
-          <Icon name="right arrow" size="huge" />
-        </Grid.Column>
-        <Grid.Column width={7} >
-          <Header as='h3' style={{ fontSize: '2em' }} inverted>
-            {"fresh organic produce"}
-          </Header>
-          <p style={{ fontSize: '1.25em' }}>
-            {"We selects the best organic farms in the Okanagan to..."}
-          </p>
-        </Grid.Column>
-        <Grid.Column width={1}>
-          <Icon name="right arrow" size="huge" />
-        </Grid.Column>
-        <Grid.Column width={7}>
-          <Header as='h3' style={{ fontSize: '2em' }} inverted>
-            {"delivered to your backdoor"}
-          </Header>
-          <p style={{ fontSize: '1.33em' }}>
-            Yes that's right, you thought it was the stuff of dreams, but even bananas can be
-            bioengineered.
-            </p>
-        </Grid.Column>
-      </Grid.Row>
-      <Grid.Row>
-        <Grid.Column width={8}>
-          <MyMapComponent
-            isMarkerShown
-            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfzZcRoNSI796bqhDRYRCS44csbZ8rNOY&v=3.exp&libraries=geometry,drawing,places"
-            loadingElement={<div style={{ height: `100%` }} />}
-            containerElement={<div style={{ height: `400px` }} />}
-            mapElement={<div style={{ height: `100%` }} />}
-          />
-        </Grid.Column>
-        <Grid.Column width={1}>
-          <Icon name="right arrow" size="huge" />
-        </Grid.Column>
-        <Grid.Column width={7}>
-          <Header as='h3' style={{ fontSize: '2em' }} inverted>
-            {"pick it up from one of our partners"}
-          </Header>
-          <p style={{ fontSize: '1.33em' }}>
-            Yes that's right, you thought it was the stuff of dreams, but even bananas can be
-            bioengineered.
-            </p>
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
-    <Segment>
+    <Grid stackable verticalAlign='middle' padded>
+      <Grid.Column width={8}>
+        <MyMapComponent
+          isMarkerShown
+          googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfzZcRoNSI796bqhDRYRCS44csbZ8rNOY&v=3.exp&libraries=geometry,drawing,places"
+          loadingElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `400px` }} />}
+          mapElement={<div style={{ height: `100%` }} />}
+        />
+      </Grid.Column>
+      <Grid.Column width={8} >
 
-    </Segment>
+        <Grid.Row style={{ padding: "2em 0em"}}>
+            <Header as='h3' style={{ fontSize: '2em' }} inverted>
+              <Image src={cherries} size="medium" circular centered />
+              {`Fresh Organic Fruit`}
+            </Header>
+            <p style={{ fontSize: '1.25em' }}>
+              {`Okanagan Drop is a weekly subscription service that brings you high-quality organic produce to Vancouver. 
+This weekly box will have $50 worth of produce and will run from June-October.`}
+            </p>
+        </Grid.Row>
+
+
+        <Grid.Row style={{ padding: "2em 0em" }}>
+            <Header as='h3' style={{ fontSize: '2em' }} inverted>
+              <Image src={leafy} size="medium" circular centered />
+              {"Delivered to your Backdoor"}
+            </Header>
+            <p style={{ fontSize: '1.33em' }}>
+              {`Farmer Jordan will drive down to Vancouver and drop off these beautiful boxes in strategic at strategic partner pick up locations.`}
+            </p>
+        </Grid.Row>
+
+        <Grid.Row style={{ padding: "2em 0em" }}>
+            <Header as='h3' style={{ fontSize: '2em' }} inverted>
+              <Image src={cherry} size="medium" circular centered />
+              {"pick it up from one of our partners"}
+            </Header>
+            <p style={{ fontSize: '1.33em' }}>
+              Yes that's right, you thought it was the stuff of dreams, but even bananas can be
+              bioengineered.
+            </p>
+
+        </Grid.Row>
+      </Grid.Column>
+    </Grid>
   </Segment>
 );
 
