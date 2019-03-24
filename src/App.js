@@ -26,10 +26,13 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
 // https://tomchentw.github.io/react-google-maps/#usage 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
   <GoogleMap
-    defaultZoom={8}
-    defaultCenter={{ lat: -34.397, lng: 150.644 }}
+    defaultZoom={11}
+    defaultCenter={{ lat: 49.281480, lng: -123.085070 }}
   >
-    {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
+    {props.isMarkerShown && <Marker position={{ lat: 49.281480, lng: -123.085070 }} />}
+    {props.isMarkerShown && <Marker position={{ lat: 49.284515, lng: -123.095648 }} />}
+    {props.isMarkerShown && <Marker position={{ lat: 49.268880, lng: -123.104567 }} />}
+    {props.isMarkerShown && <Marker position={{ lat: 49.323776, lng: -123.102458 }} />}
   </GoogleMap>
 ))
 
