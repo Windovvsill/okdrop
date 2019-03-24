@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { Button, Icon, Modal, Segment, Grid, Header, List, Form, Radio } from 'semantic-ui-react'
+import { Button, Icon, Modal, Segment, Grid, Header, Form, Radio } from 'semantic-ui-react'
 
 export class OrderSegment extends React.Component {
   state = { value: "Lightsails" }
   handleChange = (e, { value }) => this.setState({ value })
 
   render() {
-    return <Segment inverted raised style={{
+    return <Segment fluid inverted raised style={{
       backgroundImage: "radial-gradient(at 50% 100%, rgba(90, 21, 30, 1), rgba(85, 0, 30, 1), rgb(80, 20, 77, 1))",
     }}>
       <Grid>
