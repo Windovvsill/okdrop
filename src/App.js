@@ -19,7 +19,7 @@ import {
   Segment,
   Visibility,
 } from 'semantic-ui-react';
-import { SubscriptionSegment } from "./components/Subscription";
+import { SubscriptionSegment, MJSubscriptSegment } from "./components/Subscription";
 import { OrderSegment } from "./components/Order";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
@@ -80,7 +80,7 @@ const HomepageHeading = ({ mobile }) => (
       {"An Okanagan orchard in your backyard"}
     </Header>
 
-    <SubscriptionSegment />
+    <MJSubscriptSegment />
 
 
   </Container >
