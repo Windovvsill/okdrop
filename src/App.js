@@ -38,9 +38,14 @@ const getWidth = () => {
  * such things.
  */
 const HomepageHeading = ({ mobile }) => (
-  <Container text >
+  <Container  
+  text
+  style={{
+    maxHeight: "900px",
+    height: "900px",
+  }}>
 
-    <Image centered size="large" src={okdrop}></Image>
+    <Image centered size="massive" src={okdrop} />
     <Header
       as='h2'
       content='Seamlessly providing fresh, organic, local Okanagan produce to the Lower Mainland directly from farmers, through partnerships with like-minded small businesses'
@@ -50,9 +55,9 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? '0.5em' : '1.5em',
       }}
     />
-    <Button primary size='huge'>
-      Get Started
-      <Icon name='right arrow' />
+    <Button secondary size='huge'>
+      {"Get Started"}
+      <Icon name='down arrow' />
     </Button>
   </Container >
 )
@@ -85,8 +90,11 @@ class DesktopContainer extends Component {
           <Segment
             textAlign='center'
             style={{
-              minHeight: 400, padding: '4em 0em', backgroundColor: "#ffffff",
-              backgroundImage: `url(https://ak8.picdn.net/shutterstock/videos/4664138/thumb/1.jpg)`
+              minHeight: 400, padding: '4em 0em',
+               backgroundColor: "#ffffff",
+              // backgroundImage: `url(https://i.imgur.com/MVZRqqn.jpg)`,
+              background: "linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url(https://i.imgur.com/MVZRqqn.jpg)",
+              backgroundSize: "cover",
             }}
             vertical
           >
@@ -189,7 +197,8 @@ const PurposeSegment = () => (
   <Segment style={{
     paddingBottom: '4em',
     backgroundColor: "rgba(55,33,55, 1)",
-    backgroundImage: "radial-gradient(at 50% 100%, rgba(123, 22, 255, 0.75), rgb(15, 1, 94))"
+    backgroundImage: "radial-gradient(at 50% 100%, rgba(85, 21, 30, 1), rgb(90, 29, 55))",
+    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
   }}
     vertical
     inverted
@@ -247,7 +256,7 @@ const FarmersSegment = () => (
   <Segment
     style={{
       padding: '0em',
-      backgroundImage: "radial-gradient(at 50% 100%, rgba(233, 255, 255, 1), rgb(255, 255, 233, 1))"
+      // backgroundImage: "radial-gradient(at 50% 100%, rgba(233, 255, 255, 1), rgb(255, 255, 233, 1))"
     }}
     vertical
   >
