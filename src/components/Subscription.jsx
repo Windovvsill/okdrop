@@ -28,15 +28,15 @@ export class MJSubscriptSegment extends React.Component {
     return <Segment margin raised >
       <Grid>
         <Grid.Row>
-          <Header as='h3' style={{ fontSize: '2em' }}>
+          <Header as='h3' style={{ fontSize: '2em', padding: '.5em' }}>
             {"Sign up to stay updated on our progress"}
           </Header>
 
-          <div class="mj-w-button mj-w-btn" data-token="033b2f2a4df6abd5eaab98e7a07dd0e9">
+          <div style={{ padding: '.5em' }} class="mj-w-button mj-w-btn" data-token="033b2f2a4df6abd5eaab98e7a07dd0e9">
             <a href="#" data-token="033b2f2a4df6abd5eaab98e7a07dd0e9" onclick="mjOpenPopin(event, this)">
-              <Button primary fluid >
-                {"Subscribe"}
-                <Icon name="mail" />
+              <Button fluid color="red" >
+                {"Subscribe "}
+                <Icon style={{ padding: '.5em' }} name="mail" />
               </Button>
             </a>
           </div>
