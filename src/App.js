@@ -340,6 +340,10 @@ const App = () => (
       </Container>
     </Segment>
     <Segment inverted vertical style={{ padding: '5em 0em' }}>
+      <footer class="ui inverted center aligned segment">
+        <a href="https://www.instagram.com/unearthedfarm/"><i class="big instagram icon"></i></a>
+        <a href="https://twitter.com/OKhomestead"><i class="big twitter icon"></i></a>
+        <a href="https://www.facebook.com/unearthedfarm/"><i class="big facebook icon"></i></a></footer>
       <Container>
         <Grid divided inverted stackable>
           <Grid.Row>
