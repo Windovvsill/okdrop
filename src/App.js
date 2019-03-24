@@ -21,6 +21,17 @@ import {
   Visibility,
   Input,
 } from 'semantic-ui-react';
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+
+// https://tomchentw.github.io/react-google-maps/#usage 
+const MyMapComponent = withScriptjs(withGoogleMap((props) =>
+  <GoogleMap
+    defaultZoom={8}
+    defaultCenter={{ lat: -34.397, lng: 150.644 }}
+  >
+    {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
+  </GoogleMap>
+))
 
 const purple = "#763760";
 const green = "#89BF6B";
@@ -46,6 +57,17 @@ const HomepageHeading = ({ mobile }) => (
       height: "900px",
     }}
   >
+
+
+    <MyMapComponent
+      isMarkerShown
+      googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfzZcRoNSI796bqhDRYRCS44csbZ8rNOY&v=3.exp&libraries=geometry,drawing,places"
+      loadingElement={<div style={{ height: `100%` }} />}
+      containerElement={<div style={{ height: `400px` }} />}
+      mapElement={<div style={{ height: `100%` }} />}
+    />
+
+
     <div class="ui top fixed white icon menu main" >
       <a class="active item right" > Get Started</a >
       <a class="item " > What's inside the box</a>
