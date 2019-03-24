@@ -24,10 +24,18 @@ import {
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
 // https://tomchentw.github.io/react-google-maps/#usage 
+//https://blog.alexdevero.com/custom-styled-google-map-react/ 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
   <GoogleMap
     defaultZoom={11}
     defaultCenter={{ lat: 49.281480, lng: -123.085070 }}
+    defaultOptions={{
+      disableDefaultUI: true, // disable default map UI
+      draggable: true, // make map draggable
+      keyboardShortcuts: false, // disable keyboard shortcuts
+      scaleControl: true, // allow scale controle
+      scrollwheel: true, // allow scroll wheel
+    }}
   >
     {props.isMarkerShown && <Marker position={{ lat: 49.281480, lng: -123.085070 }} />}
     {props.isMarkerShown && <Marker position={{ lat: 49.284515, lng: -123.095648 }} />}
