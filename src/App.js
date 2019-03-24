@@ -23,6 +23,7 @@ import {
   Input,
 } from 'semantic-ui-react';
 import { SubscriptionSegment } from "./components/Subscription";
+import { OrderSegment } from "./components/Order";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
 // https://tomchentw.github.io/react-google-maps/#usage 
@@ -390,15 +391,32 @@ class App extends React.Component {
           >
             {"Or"}
           </Divider>
-          <Header as='h3' style={{ fontSize: '2em' }}>
-            Ready to order?
-        </Header>
-          <p style={{ fontSize: '1.33em' }}>
-            {"You really know your stuff!"}
-          </p>
-          <Button as='a' size='large' primary>
-            {"Pre-Order"}
-          </Button>
+
+          <OrderSegment />
+          {/* <Segment inverted raised style={{
+            backgroundImage: "radial-gradient(at 50% 100%, rgba(90, 21, 30, 1), rgba(85, 0, 30, 1), rgb(80, 20, 77, 1))",
+          }}>
+            <Grid>
+              <Grid.Row columns={2} inverted>
+                <Grid.Column width={12} inverted>
+                  
+                    <Header as='h3' style={{ fontSize: '2em' }} inverted>
+                      {"Ready to order?"}
+                    </Header>
+                    <p style={{ fontSize: '1.33em' }}>
+                      {"You really know your stuff!"}
+                    </p>
+                </Grid.Column>
+                <Grid.Column width={4} verticalAlign="middle">
+                    <Button as='a' size='large' primary icon>
+                      {"Pre-Order"}
+                      <Icon name='right arrow' />
+                    </Button>
+
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+          </Segment> */}
         </Container>
       </Segment>
       <Segment inverted vertical style={{ padding: '5em 0em' }}>
