@@ -93,7 +93,7 @@ const HomepageHeading = ({ mobile, props }) => (
       {"An Okanagan orchard in your backyard"}
     </Header>
 
-    <SubscriptionSegment/>
+    <SubscriptionSegment />
 
 
   </Container >
@@ -324,9 +324,6 @@ const FarmersSegment = () => (
     vertical
   >
     <Container textAlign="center" text >
-      <Header as='h3' style={{ fontSize: '2em', padding: "2em" }}>
-        {"Meet Farmer Jordan"}
-      </Header>
     </Container>
     <Grid celled='internally' columns='equal' stackable>
       <Grid.Row textAlign='left'>
@@ -335,20 +332,32 @@ const FarmersSegment = () => (
         </Grid.Column>
         <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
           <Header as='h3' style={{ fontSize: '2em' }}>
-            {"Farmer 1"}
+            {"Meet Farmer Jordan"}
           </Header>
           <p style={{ fontSize: '1.33em' }}>
-            {"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc."}
+            <strong>Location</strong>: Helen’s Acres, Mission Creek Park, Kelowna, BC (5 acres) Produce: Cherries, Apricots, Blueberries, Cherries, Tomatoes, Nectarines, Zucchini, Green Onions, Radishes, Corn, Peppers, Green Beans, Peas, Nectarines, Peaches, Pears, Plums, Apples, Onions, Tomatoes, Cucumbers, Cantaloupe, Lettuce, Peaches, Plums, Pears, Apples, Onions, Squash, Apples, Pumpkins, Squash Season’s </p>
+          <p style={{ fontSize: '1.33em' }}>
+            <strong>Growing</strong>: 9th season. </p>
+          <p style={{ fontSize: '1.33em' }}>
+            <strong>Philosophy</strong>: We farm according to the belief that healthy, delicious food is inextricably linked to the health of the soil that produces it. Healthy soil is teeming with microorganisms (a teaspoon of rich garden soil can hold up to one billion bacteria and several thousand protozoa) and organic matter--the decaying remains of plants, animals, and all those microbes. Both of these elements tend towards absence in farming systems that make heavy, sustained use of synthetic fertilizers, pesticides, and herbicides. A carrot is not a carrot. We also strive to keep the time between harvest and distribution as short as possible to ensure that our produce is consumed at or very near its peak of freshness.
           </p>
         </Grid.Column>
       </Grid.Row>
       <Grid.Row textAlign='left'>
         <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
           <Header as='h3' style={{ fontSize: '2em' }}>
-            {"Farmer 1"}
+            {"Meet Elena"}
           </Header>
           <p style={{ fontSize: '1.33em' }}>
-            {"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc."}
+            <strong>Location</strong>: North Vancouver </p>
+          <p style={{ fontSize: '1.33em' }}>
+            <strong>Family size</strong>: 4 and two kitties </p>
+          <p style={{ fontSize: '1.33em' }}>
+            <strong>Loves</strong>: Organic produce, non-dairy products and Okanagan wine.
+          </p>
+          <p style={{ fontSize: '1.33em' }}>
+            <strong>Why she loves Okanagan Drop</strong>: She is a busy mother feeding 3 teens in the lower mainland, so you can imagine they go through A LOT of food. She strives to feed her family with healthy, organic, high-quality foods, but with everything always on the go, she has a difficult time finding Okanagan produce. She doesn’t want to go out of her way to search Okanagan. But she does support local farmers and would like to know where her food comes. The whole aspect of receiving weekly boxes of Okanagan produce gives her the experience of having an orchard right in her backyard. Also, it teaches her younger kids how as the season progresses how different fruits and veggies ripen.
+
           </p>
         </Grid.Column>
         <Grid.Column style={{ paddingBottom: '2em', paddingTop: '2em' }}>
